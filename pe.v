@@ -10,8 +10,12 @@ module pe (
 );
 
     always @(posedge clk) begin
-        if (rst)
+        if (rst) begin
             acc <= 0;
+            a_out <= 0;
+            b_out <= 0;
+        end
+
     else if (en) begin
         acc   <= acc + a_in * b_in;
         a_out <= a_in;
